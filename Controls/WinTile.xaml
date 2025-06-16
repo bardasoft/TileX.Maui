@@ -1,0 +1,105 @@
+<ContentView
+    x:Class="TileX.Maui.Controls.WinTile"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:control="clr-namespace:TileX.Maui.Controls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="LiveTile"
+    x:DataType="control:WinTile">
+
+    <Border
+        x:Name="FlipContainer"
+        Background="Transparent">
+
+        <Grid>
+            <!--  Front Side  -->
+            <Grid x:Name="FrontSide">
+                <BoxView
+                    InputTransparent="True"
+                    Opacity="{Binding TileTransparency, Source={x:Reference LiveTile}}"
+                    Color="{Binding TileColor, Source={x:Reference LiveTile}}" />
+
+                <ContentView>
+                    <ContentView.Triggers>
+                        <!--  Icon Font  -->
+                        <DataTrigger
+                            Binding="{Binding IsIconFont, Source={x:Reference LiveTile}}"
+                            TargetType="ContentView"
+                            Value="True">
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Label
+                                        FontFamily="{Binding IconFontFamily, Source={x:Reference LiveTile}}"
+                                        FontSize="{Binding IconFontSize, Source={x:Reference LiveTile}}"
+                                        HorizontalTextAlignment="{Binding HorizontalIconAlignment, Source={x:Reference LiveTile}}"
+                                        Text="{Binding IconFont, Source={x:Reference LiveTile}}"
+                                        TextColor="{Binding IconFontColor, Source={x:Reference LiveTile}}"
+                                        VerticalTextAlignment="{Binding VerticalIconAlignment, Source={x:Reference LiveTile}}" />
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+
+                        <!--  Image  -->
+                        <DataTrigger
+                            Binding="{Binding IsIconFont, Source={x:Reference LiveTile}}"
+                            TargetType="ContentView"
+                            Value="False">
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Image
+                                        Aspect="AspectFit"
+                                        HeightRequest="{Binding ImageHeight, Source={x:Reference LiveTile}}"
+                                        HorizontalOptions="{Binding ImageHorizontalPosition, Source={x:Reference LiveTile}}"
+                                        Source="{Binding Image, Source={x:Reference LiveTile}}"
+                                        VerticalOptions="{Binding ImageVerticalPosition, Source={x:Reference LiveTile}}"
+                                        WidthRequest="{Binding ImageWidth, Source={x:Reference LiveTile}}" />
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </ContentView.Triggers>
+                </ContentView>
+
+                <Label
+                    Padding="{Binding TitlePadding, Source={x:Reference LiveTile}}"
+                    FontAttributes="{Binding TitleFontAttributes, Source={x:Reference LiveTile}}"
+                    FontSize="{Binding TitleFontSize, Source={x:Reference LiveTile}}"
+                    HorizontalTextAlignment="{Binding TitleHorizontalPosition, Source={x:Reference LiveTile}}"
+                    IsVisible="{Binding IsTitleVisible, Source={x:Reference LiveTile}}"
+                    Text="{Binding TileTitle, Source={x:Reference LiveTile}}"
+                    TextColor="{Binding TitleTextColor, Source={x:Reference LiveTile}}"
+                    VerticalTextAlignment="{Binding TitleVerticalPosition, Source={x:Reference LiveTile}}" />
+            </Grid>
+
+            <Grid
+                x:Name="BackSide"
+                IsVisible="False">
+
+                <BoxView
+                    InputTransparent="True"
+                    Opacity="{Binding TileTransparency, Source={x:Reference LiveTile}}"
+                    Color="{Binding TileColor, Source={x:Reference LiveTile}}" />
+
+                <Label
+                    Padding="{Binding ContentPadding, Source={x:Reference LiveTile}}"
+                    FontAttributes="{Binding ContentFontAttributes, Source={x:Reference LiveTile}}"
+                    FontSize="{Binding ContentFontSize, Source={x:Reference LiveTile}}"
+                    HorizontalTextAlignment="{Binding ContentHorizontalPosition, Source={x:Reference LiveTile}}"
+                    LineBreakMode="WordWrap"
+                    Text="{Binding TileContent, Source={x:Reference LiveTile}}"
+                    TextColor="{Binding ContentTextColor, Source={x:Reference LiveTile}}"
+                    VerticalTextAlignment="{Binding ContentVerticalPosition, Source={x:Reference LiveTile}}" />
+            </Grid>
+        </Grid>
+        <Border.Behaviors>
+            <toolkit:TouchBehavior
+                BindingContext="{Binding BindingContext, Source={x:Reference LiveTile}}"
+                Command="{Binding Command, Source={x:Reference LiveTile}}"
+                CommandParameter="{Binding CommandParameter, Source={x:Reference LiveTile}}"
+                LongPressCommand="{Binding UpdateTileSizeCommand, Source={x:Reference LiveTile}}"
+                LongPressDuration="1000"/>
+        </Border.Behaviors>
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="{Binding CornerRadius, Source={x:Reference LiveTile}}" />
+        </Border.StrokeShape>
+    </Border>
+</ContentView>
