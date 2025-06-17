@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WinTile Control Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #fafafa;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        caption {
+            caption-side: top;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>WinTile Control Properties</caption>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Default</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>TileSize</td><td>TileSizes</td><td>Size of the tile (Small, Medium, Wide, Large).</td><td>TileSizes.Medium</td><td>TileSizes.Large</td></tr>
+            <tr><td>TileColor</td><td>Color</td><td>Background color of the tile.</td><td>Color.FromArgb("#1753C9")</td><td>Color.FromArgb("#FF0000")</td></tr>
+            <tr><td>TileTransparency</td><td>double</td><td>Transparency level (0.0 to 1.0).</td><td>1.0</td><td>0.5</td></tr>
+            <tr><td>TileTitle</td><td>string</td><td>Title text displayed on the tile.</td><td>null</td><td>"My Tile Title"</td></tr>
+            <tr><td>TileContent</td><td>string</td><td>Content text displayed on the tile.</td><td>null</td><td>"Some content here"</td></tr>
+            <tr><td>TitleTextColor</td><td>Color</td><td>Color of the title text.</td><td>Colors.White</td><td>Colors.Yellow</td></tr>
+            <tr><td>TitleFontSize</td><td>double</td><td>Font size of the title text.</td><td>8.0</td><td>12.0</td></tr>
+            <tr><td>TitleVerticalPosition</td><td>TextAlignment</td><td>Vertical alignment of title text.</td><td>TextAlignment.End</td><td>TextAlignment.Start</td></tr>
+            <tr><td>TitleHorizontalPosition</td><td>TextAlignment</td><td>Horizontal alignment of title text.</td><td>TextAlignment.Start</td><td>TextAlignment.Center</td></tr>
+            <tr><td>TitleFontAttributes</td><td>FontAttributes</td><td>Font styling (None, Bold, Italic).</td><td>FontAttributes.None</td><td>FontAttributes.Bold</td></tr>
+            <tr><td>TitlePadding</td><td>Thickness</td><td>Padding around the title.</td><td>new Thickness(5)</td><td>new Thickness(10)</td></tr>
+            <tr><td>IsTitleVisible</td><td>bool</td><td>Show or hide the title.</td><td>true</td><td>false</td></tr>
+            <tr><td>Command</td><td>ICommand</td><td>Command executed on tile tap.</td><td>null</td><td>new Command(() => { })</td></tr>
+            <tr><td>CommandParameter</td><td>object</td><td>Parameter passed to the command.</td><td>null</td><td>someParameter</td></tr>
+            <tr><td>FlipIntervalSeconds</td><td>int</td><td>Flip interval in seconds.</td><td>7</td><td>10</td></tr>
+            <tr><td>BackSideDurationSeconds</td><td>int</td><td>Duration back side is shown.</td><td>5</td><td>3</td></tr>
+            <tr><td>IsIconFont</td><td>bool</td><td>Whether the icon is a font.</td><td>true</td><td>false</td></tr>
+            <tr><td>CornerRadius</td><td>int</td><td>Corner radius of the tile.</td><td>8</td><td>12</td></tr>
+            <tr><td>IconFont</td><td>string</td><td>Font icon displayed.</td><td>null</td><td>"&#xf007;"</td></tr>
+            <tr><td>IconFontFamily</td><td>string</td><td>Font family of the icon.</td><td>null</td><td>"FontAwesome"</td></tr>
+            <tr><td>IconFontColor</td><td>Color</td><td>Color of the icon font.</td><td>Colors.Black</td><td>Colors.Red</td></tr>
+            <tr><td>IconFontSize</td><td>double</td><td>Size of the icon font.</td><td>28.0</td><td>32.0</td></tr>
+            <tr><td>VerticalIconAlignment</td><td>TextAlignment</td><td>Vertical alignment of the icon.</td><td>TextAlignment.Center</td><td>TextAlignment.Start</td></tr>
+            <tr><td>HorizontalIconAlignment</td><td>TextAlignment</td><td>Horizontal alignment of the icon.</td><td>TextAlignment.Center</td><td>TextAlignment.End</td></tr>
+            <tr><td>Image</td><td>ImageSource</td><td>Image displayed on the tile.</td><td>null</td><td>ImageSource.FromFile("image.png")</td></tr>
+            <tr><td>ImageWidth</td><td>double</td><td>Width of the image.</td><td>0.0</td><td>100.0</td></tr>
+            <tr><td>ImageHeight</td><td>double</td><td>Height of the image.</td><td>0.0</td><td>100.0</td></tr>
+            <tr><td>ImageVerticalPosition</td><td>LayoutOptions</td><td>Vertical position of the image.</td><td>LayoutOptions.Center</td><td>LayoutOptions.Start</td></tr>
+            <tr><td>ImageHorizontalPosition</td><td>LayoutOptions</td><td>Horizontal position of the image.</td><td>LayoutOptions.Center</td><td>LayoutOptions.End</td></tr>
+            <tr><td>ContentFontSize</td><td>double</td><td>Font size of the content.</td><td>12.0</td><td>14.0</td></tr>
+            <tr><td>ContentFontAttributes</td><td>FontAttributes</td><td>Font styling for content.</td><td>FontAttributes.None</td><td>FontAttributes.Italic</td></tr>
+            <tr><td>ContentTextColor</td><td>Color</td><td>Color of the content text.</td><td>Colors.White</td><td>Colors.Gray</td></tr>
+            <tr><td>ContentPadding</td><td>Thickness</td><td>Padding around content.</td><td>new Thickness(5)</td><td>new Thickness(10)</td></tr>
+            <tr><td>ContentVerticalPosition</td><td>TextAlignment</td><td>Vertical alignment of content.</td><td>TextAlignment.Start</td><td>TextAlignment.End</td></tr>
+            <tr><td>ContentHorizontalPosition</td><td>TextAlignment</td><td>Horizontal alignment of content.</td><td>TextAlignment.Start</td><td>TextAlignment.Center</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
