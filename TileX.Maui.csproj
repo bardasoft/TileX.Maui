@@ -24,19 +24,24 @@
 		<PackageId>TileX.Maui</PackageId>
 		<Title>Maui Live Tile</Title>
 		<Description>A library for integrating live tiles into .NET MAUI applications.</Description>
-		<Authors>Eduardo</Authors>
+		<Authors>Eduardo Gomez</Authors>
 		<Company>CGSoft</Company>
 		<Version>1.0.0</Version>
-		<RepositoryUrl>https://github.com/your-repo</RepositoryUrl>
+		<RepositoryUrl>https://github.com/eduardoagr/TileX.Maui</RepositoryUrl>
 		<License>MIT</License>
-		<Copyright>© 2025 Eduardo. All rights reserved.</Copyright>
+		<Copyright>© 2025 Eduardo Gomez. All rights reserved.</Copyright>
 		<Tags>MAUI, Live Tile, UI, Cross-Platform</Tags>
 		<PackageIcon>LiveTile.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+	
 	<ItemGroup>
 		<None Include="LiveTile.png" Pack="true" PackagePath="LiveTile.png" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="README.md" Pack="true" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.0.0" />
