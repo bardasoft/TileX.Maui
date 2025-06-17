@@ -42,7 +42,7 @@ The `WinTile` control is a customizable tile control based on Windows Phone live
 
 The following table summarizes the properties available in the `WinTile` control, along with their descriptions and example values.
 
-[View WinTile Control Properties](./WinTileProperties.html)
+[View WinTile Control Properties](./Properties.html)
 
 ## Usage Example
 
