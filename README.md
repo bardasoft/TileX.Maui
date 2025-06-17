@@ -1,5 +1,3 @@
-﻿<a href="https://www.buymeacoffee.com/edgomez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Pizaz" height="41" width="174"></a>
-
 **🚀 WinTile - A Dynamic Live Tile Control for .NET MAUI**
 
 WinTile is a customizable live tile control for .NET MAUI, designed to support dynamic flipping animations, multiple tile sizes, and flexible UI customization. Whether you need interactive dashboard tiles or responsive app elements, WinTile provides a lightweight and smooth experience.
