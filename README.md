@@ -25,6 +25,12 @@ WinTile is a customizable live tile control for .NET MAUI, designed to support d
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 ```
+
+Add this to xaml
+
+```
+   xmlns:tile="clr-namespace:TileX.Maui.Controls;assembly=TileX.Maui"
+```
 # WinTile Control Documentation
 
 The `WinTile` control is a customizable tile control based on Windows Phone live tiles. It provides various properties to adjust its appearance and behavior, including size, color, content, and flipping animations.
@@ -76,7 +82,7 @@ The following table summarizes the properties available in the `WinTile` control
 Here is a simple example of how to use the `WinTile` control in XAML:
 
 ```xml
-<local:WinTile
+<tile:WinTile
     TileSize="TileSizes.Medium"
     TileColor="Color.FromArgb('#FF5733')"
     TileTitle="My Tile"
