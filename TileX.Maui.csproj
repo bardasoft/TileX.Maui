@@ -17,7 +17,26 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+		<!-- NuGet Package Metadata -->
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>TileX.Maui</PackageId>
+		<Title>Maui Live Tile</Title>
+		<Description>A library for integrating live tiles into .NET MAUI applications.</Description>
+		<Authors>Eduardo</Authors>
+		<Company>CGSoft</Company>
+		<Version>1.0.0</Version>
+		<RepositoryUrl>https://github.com/your-repo</RepositoryUrl>
+		<License>MIT</License>
+		<Copyright>© 2025 Eduardo. All rights reserved.</Copyright>
+		<Tags>MAUI, Live Tile, UI, Cross-Platform</Tags>
+		<PackageIcon>LiveTile.png</PackageIcon>
 	</PropertyGroup>
+	<ItemGroup>
+		<None Include="LiveTile.png" Pack="true" PackagePath="LiveTile.png" />
+	</ItemGroup>
+
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.0.0" />
