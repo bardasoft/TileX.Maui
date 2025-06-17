@@ -96,7 +96,7 @@
                 Command="{Binding Command, Source={x:Reference LiveTile}}"
                 CommandParameter="{Binding CommandParameter, Source={x:Reference LiveTile}}"
                 LongPressCommand="{Binding UpdateTileSizeCommand, Source={x:Reference LiveTile}}"
-                LongPressDuration="1000"/>
+                LongPressDuration="1000" />
         </Border.Behaviors>
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="{Binding CornerRadius, Source={x:Reference LiveTile}}" />
