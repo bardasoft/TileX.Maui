@@ -80,6 +80,7 @@ The following table summarizes the properties available in the `WinTile` control
 
 Here is a simple example of how to use the `WinTile` control in XAML:
 
+```xml
 <tile:WinTile
     TileSize="TileSizes.Medium"
     TileColor="Color.FromArgb('#FF5733')"
