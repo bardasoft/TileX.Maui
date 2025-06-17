@@ -12,8 +12,10 @@ WinTile is a customizable live tile control for .NET MAUI, designed to support d
 
 # Installation & Usage:
 
-```using TileX.Maui.Extensions;
-   using CommunityToolkit.Maui; (important)
+```
+using TileX.Maui.Extensions;
+using CommunityToolkit.Maui; (important)
+
         public static MauiApp CreateMauiApp() {
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>()
