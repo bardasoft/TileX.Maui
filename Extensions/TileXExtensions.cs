@@ -1,12 +1,16 @@
-﻿using CommunityToolkit.Maui;
-
-namespace TileX.Maui.Extensions;
+﻿namespace TileX.Maui.Extensions;
 
 public static class TileXExtensions {
+
     public static MauiAppBuilder UseTileX(this MauiAppBuilder builder) {
-        // Register the TileX service
-        builder.UseMauiCommunityToolkit(); // important!
-        // Optional: Register any custom handlers if needed
+
+        builder.UseMauiCommunityToolkit();
+
+        builder.ConfigureFonts(fonts => {
+            fonts.AddFont("fa-brands-400.ttf", "fa");
+        });
+
         return builder;
+
     }
 }

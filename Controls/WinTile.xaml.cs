@@ -23,13 +23,17 @@ public partial class WinTile : ContentView {
         UpdateSize(TileSize);
     }
 
-    // Helper method to create BindableProperties with default values
+    #region Helper method to create BindableProperties with default values
+
     private static BindableProperty CreateBindableProperty<T>(string propertyName, T defaultValue) =>
-        BindableProperty.Create(
-            propertyName,
-            typeof(T),
-            typeof(WinTile),
-            defaultValue);
+    BindableProperty.Create(propertyName, typeof(T), typeof(WinTile), defaultValue);
+
+    private static BindableProperty CreateBindableProperty<T>(
+        string propertyName, T defaultValue,
+        BindableProperty.BindingPropertyChangedDelegate propertyChanged) =>
+        BindableProperty.Create(propertyName, typeof(T), typeof(WinTile), defaultValue, propertyChanged: propertyChanged);
+
+    #endregion
 
     #region Tile properties
 
@@ -159,13 +163,30 @@ public partial class WinTile : ContentView {
 
     #region Icon font properties
 
-    public static readonly BindableProperty IconFontProperty = BindableProperty.Create(nameof(IconFont), typeof(string), typeof(WinTile), default(string));
-    public string IconFont {
-        get => (string)GetValue(IconFontProperty);
-        set => SetValue(IconFontProperty, value);
+    public static readonly BindableProperty SymbolProperty =
+        CreateBindableProperty(nameof(Symbol), default(FontSymbols), OnSymbolChanged);
+
+    public FontSymbols Symbol {
+        get => (FontSymbols)GetValue(SymbolProperty);
+        set => SetValue(SymbolProperty, value);
     }
 
-    public static readonly BindableProperty IconFontFamilyProperty = BindableProperty.Create(nameof(IconFontFamily), typeof(string), typeof(WinTile), default(string));
+    private static void OnSymbolChanged(BindableObject bindable, object oldValue, object newValue) {
+        if(bindable is WinTile tile && newValue is FontSymbols symbol) {
+            tile.SymbolUnicode = symbol.ToUnicode(); // Update Unicode string
+        }
+    }
+
+    public static readonly BindableProperty SymbolUnicodeProperty =
+        CreateBindableProperty(nameof(SymbolUnicode), string.Empty);
+
+    public string SymbolUnicode {
+        get => (string)GetValue(SymbolUnicodeProperty);
+        private set => SetValue(SymbolUnicodeProperty, value);
+    }
+
+
+    public static readonly BindableProperty IconFontFamilyProperty = BindableProperty.Create(nameof(IconFontFamily), typeof(string), typeof(WinTile), "fa");
     public string IconFontFamily {
         get => (string)GetValue(IconFontFamilyProperty);
         set => SetValue(IconFontFamilyProperty, value);

@@ -32,7 +32,7 @@
                                         FontFamily="{Binding IconFontFamily, Source={x:Reference LiveTile}}"
                                         FontSize="{Binding IconFontSize, Source={x:Reference LiveTile}}"
                                         HorizontalTextAlignment="{Binding HorizontalIconAlignment, Source={x:Reference LiveTile}}"
-                                        Text="{Binding IconFont, Source={x:Reference LiveTile}}"
+                                        Text="{Binding SymbolUnicode, Source={x:Reference LiveTile}}"
                                         TextColor="{Binding IconFontColor, Source={x:Reference LiveTile}}"
                                         VerticalTextAlignment="{Binding VerticalIconAlignment, Source={x:Reference LiveTile}}" />
                                 </Setter.Value>
