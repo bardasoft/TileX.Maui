@@ -1,0 +1,9 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="OpenTileXReadMe" AfterTargets="Build" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
+		<ItemGroup>
+			<_ReadMeFile Include="$(MSBuildThisFileDirectory)..\..\README.md" />
+		</ItemGroup>
+		<Message Text="Thanks for installing TileX.Maui! Opening README..." Importance="High" />
+		<OpenFile Include="@(_ReadMeFile)" />
+	</Target>
+</Project>
